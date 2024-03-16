@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jelias <jelias@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 23:41:23 by jelias            #+#    #+#             */
-/*   Updated: 2024/03/16 20:08:52 by jelias           ###   ########.fr       */
+/*   Updated: 2024/03/16 19:48:15 by jelias           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	*ft_memset(void *s, int c, size_t n);
+void	ft_bzero(void *s, size_t n);
 
-void	*ft_memset(void *s, int c, size_t n)
+void	ft_bzero(void *s, size_t n)
+// sets n number of bytes to zero ('\0')
 {
 	size_t	i;
-	char	*str;
+	char	*to_be_zeroed;
 
-	str = (char *)s;
-
+	to_be_zeroed = s;
 	i = 0;
-	while (n >i)
+
+	while (n > i)
 	{
-		str[i] = c;
+		to_be_zeroed[i] = '\0';
 		i++;
 	}
-	return (s);
 }
 
 int	main(void)
 {
-	char test_text[20] = "I love my doggo";
+	char	test_string[] = "1234567890";
 
-	ft_memset(test_text, '.', 6);
-	printf("%s \n", test_text);
+	ft_bzero(test_string, 5);
+	printf("%s\n", test_string);
 	return (0);
 }
