@@ -6,7 +6,7 @@
 /*   By: jelias <jelias@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 23:41:23 by jelias            #+#    #+#             */
-/*   Updated: 2024/03/16 19:48:15 by jelias           ###   ########.fr       */
+/*   Updated: 2024/03/19 12:00:06 by jelias           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,13 @@ void	ft_bzero(void *s, size_t n)
 
 	to_be_zeroed = s;
 	i = 0;
-
 	while (n > i)
 	{
 		to_be_zeroed[i] = '\0';
 		i++;
 	}
 }
-
+/*
 int	main(void)
 {
 	char	test_string[] = "1234567890";
@@ -38,3 +37,4 @@ int	main(void)
 	printf("%s\n", test_string);
 	return (0);
 }
+*/

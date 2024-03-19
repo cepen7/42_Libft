@@ -6,7 +6,7 @@
 /*   By: jelias <jelias@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 23:41:23 by jelias            #+#    #+#             */
-/*   Updated: 2024/03/16 20:08:52 by jelias           ###   ########.fr       */
+/*   Updated: 2024/03/19 12:03:25 by jelias           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,15 @@ void	*ft_memset(void *s, int c, size_t n)
 	char	*str;
 
 	str = (char *)s;
-
 	i = 0;
-	while (n >i)
+	while (n > i)
 	{
 		str[i] = c;
 		i++;
 	}
 	return (s);
 }
-
+/*
 int	main(void)
 {
 	char test_text[20] = "I love my doggo";
@@ -38,3 +37,4 @@ int	main(void)
 	printf("%s \n", test_text);
 	return (0);
 }
+*/
