@@ -6,7 +6,7 @@
 /*   By: jelias <jelias@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 10:31:52 by jelias            #+#    #+#             */
-/*   Updated: 2024/04/13 23:51:35 by jelias           ###   ########.fr       */
+/*   Updated: 2024/04/14 00:13:21 by jelias           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ void    *ft_memcpy(void *dest, const void *src, size_t n);
 void    *ft_memcpy(void *dest, const void *src, size_t n)
 {
     char    *d;
-    char    *s;
+    const char    *s;
     void    *orig_dest;
     int     i;
 
-    d == dest;
-    s == src;
-    orig_dest == dest;
+    d = dest;
+    s = src;
+    orig_dest = dest;
 
 
     if (!dest || !src)
@@ -32,20 +32,18 @@ void    *ft_memcpy(void *dest, const void *src, size_t n)
     i = 0;
     while (n > 0)
     {
-        if (s[i])
-        {
-            d[i] == s[i];
-            i++;
-            n--;
-        }
+        d[i] = s[i];
+        i++;
+        n--;
     }
+    return orig_dest;
 }
 
-void    main(void){
-    const char  source[] = "How do you do, fellow kids?";
-    char        destination[50];
+int    main(void){
+    char    source[] = "How do you do, fellow kids?";
+    char    destination[50];
 
-    ft_memcpy(source, destination, 13);
+    ft_memcpy(destination, source, 13);
     printf("%s", destination);
     return (0);
 }
